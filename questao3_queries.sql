@@ -6,15 +6,11 @@
 
 --1. Retornar todos os usuários do sistema com o CPF (com máscara), o nome do us
 --uário em caixa alta, bem como os cargos, orgãos e sistemas associados (se existir);
-select * from usuario_sistema ORDER BY funcionario_cpf;
 
-select funcionario.funcionario_cpf, funcionario.nome
-	   from funcionario
-       where funcionario.funcionario_cpf IN (
-                                             select usuario_sistema.funcionario_cpf   
-  								             from usuario_sistema
-       										);
-select usuario_sistema.funcionario_cpf, usuario_sistema.sistema_id
-from usuario_sistema
-where usuario_sistema.funcionario_cpf IN (
-  										  select funcionario.funcionario_cpf
+SELECT funcionario.funcionario_cpf AS CPF, UPPER(funcionario.nome) AS USUARIO, sistema.sistema_nome AS SISTEMA
+FROM funcionario 
+JOIN usuario_sistema
+ON funcionario.funcionario_cpf = usuario_sistema.funcionario_cpf
+JOIN sistema
+ON usuario_sistema.sistema_id = sistema.sistema_id
+ORDER BY funcionario.funcionario_cpf;
