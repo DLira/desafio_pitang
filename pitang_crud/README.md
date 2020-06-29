@@ -4,7 +4,7 @@ Para o desenvolvimento do sistema, foram utilizados o servidor de aplicações *
 
 - O build do sistema pode ser feito diretamente via linha de comando utilizando o maven. `mvn clean package` irá gerar o **pitangCRUD.war**
 
-- O deploy pode ser feito diretamente pela console administrativa do WildFly em http://localhost:9090.
+- O deploy pode ser feito diretamente pela console administrativa do WildFly em http://localhost:9990.
 
 - O Sistema então poderá ser testado http://localhost:8080/usuarios.xhtml
 
