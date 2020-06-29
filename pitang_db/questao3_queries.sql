@@ -22,11 +22,16 @@ RETURNS VARCHAR(14)
 DELIMITER ;
 
 
-SELECT formatar_cpf(funcionario.funcionario_cpf) AS CPF, UPPER(funcionario.nome) AS USUARIO, sistema.sistema_nome AS SISTEMA
+
+SELECT formatar_cpf(funcionario.funcionario_cpf) AS CPF, UPPER(funcionario.nome) AS USUARIO, sistema.sistema_nome AS SISTEMA,
+					funcionario.aniversario, funcionario.sexo, funcionario.salario, cargo.cargo_nome, orgao.orgao_nome
 FROM funcionario 
 JOIN usuario_sistema
 ON funcionario.funcionario_cpf = usuario_sistema.funcionario_cpf
 JOIN sistema
 ON usuario_sistema.sistema_id = sistema.sistema_id
+JOIN cargo
+ON funcionario.cargo_id = cargo.cargo_id
+JOIN orgao
+ON funcionario.orgao_id = orgao.orgao_id
 ORDER BY funcionario.funcionario_cpf;
-
