@@ -12,10 +12,12 @@ DELIMITER $$
 CREATE FUNCTION formatar_cpf(cpf VARCHAR(11))
 RETURNS VARCHAR(14)
     BEGIN
-        RETURN CONCAT( SUBSTRING(cpf,1,3) , '.',
+        RETURN CONCAT( 
+        			  SUBSTRING(cpf,1,3), '.',
                       SUBSTRING(cpf,4,3), '.',
                       SUBSTRING(cpf,7,3), '-',
-                      SUBSTRING(cpf,10,2));
+                      SUBSTRING(cpf,10,2)
+                      );
 	END$$
 DELIMITER ;
 
