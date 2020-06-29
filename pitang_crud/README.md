@@ -6,4 +6,6 @@ Para o desenvolvimento do sistema, foram utilizados o servidor de aplicações *
 
 - O deploy pode ser feito diretamente pela console administrativa do WildFly em [localhost:9090].
 
-- O Sistema então poderá ser testato [localhost:8080/usuarios.xhtml]
+- O Sistema então poderá ser testato http://localhost:8080/usuarios.xhtml
+
+- Os arquivos de configuração do WildFly, `standalone-full.xml` e `standalone.xml` estão na pasta [wildfly_configuration_files](https://github.com/DLira/desafio_pitang/tree/master/pitang_crud/wildfly_configuration_files) (precisa incluir mais algum?).
